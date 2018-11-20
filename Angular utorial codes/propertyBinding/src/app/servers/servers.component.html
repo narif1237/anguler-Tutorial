@@ -1,0 +1,10 @@
+<p>
+  {{server}}
+</p>
+  <button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+  <p>
+    {{allowNewServer}}
+  </p>
+  <app-server></app-server>
+
+<p [innerText]="allowNewServer"></p>
