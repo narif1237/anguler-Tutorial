@@ -1,6 +1,8 @@
 <p>
   {{server}}
 </p>
+<input type="text" (input)="updateServerName($event)">
+Server name is {{serverName}}
   <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onclickServerStatus()">Add Server</button>
   <p>
     {{allowNewServer}}
