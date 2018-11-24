@@ -9,5 +9,6 @@ Server name is {{serverName}}
     {{serverStatus}}
   </p>
   <app-server></app-server>
+  <p *ngIf="ifTest">SIf test by directive</p>
 
 <p [innerText]="allowNewServer"></p>
