@@ -1,19 +1,19 @@
 <p>
   {{server}}
 </p>
-<input type="text" (input)="updateServerName($event)">
+<input type="text" [(ngModel)]="serverName">
 Server name is {{serverName}}
   <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onclickServerStatus()">Add Server</button>
   <p>
     {{allowNewServer}}
     {{serverStatus}}
   </p>
-  <app-server></app-server>
+  <app-server *ngFor="let server of servers"></app-server>
   <ng-template #el>
 <p>ifTest is false</p>
   </ng-template>
 
-  <p *ngIf="ifTest; else el">SIf test by directive</p>
 
+  <p *ngIf="ifTest; else el">SIf test by directive</p>
 
 <p [innerText]="allowNewServer"></p>
