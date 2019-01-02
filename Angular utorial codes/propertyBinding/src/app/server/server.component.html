@@ -1,5 +1,11 @@
-<p [ngStyle]="{backgroundColor:getColor()}">
+<div [ngStyle]="{backgroundColor:getColor()}">
 
-  Hi I am a server---- server works {{serverStatus}}
-</p>
+  <p >
+
+    Hi I am a server {{serverName}} server works {{serverStatus}}
+  </p>
+  <input type="text" [(ngModel)]="serverName" (keyup)="giveDataToParent()" />
+  
+</div>
+
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-server',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServerComponent implements OnInit {
   serverStatus: string;
-
+  @Input() serverName: string;
+  
+  @Output() name=new EventEmitter<{srvName:string;}>();
+  
 
   constructor() {
     this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
@@ -18,6 +21,13 @@ export class ServerComponent implements OnInit {
     } else {
       return 'red';
     }
+  }
+  giveDataToParent()
+  {
+    console.log("button clicked");
+    
+   
+    this.name.emit({srvName:this.serverName});
   }
   ngOnInit() {
   }

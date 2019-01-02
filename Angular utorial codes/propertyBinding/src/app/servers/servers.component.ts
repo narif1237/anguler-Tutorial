@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input ,EventEmitter} from '@angular/core';
+
 
 @Component({
   selector: 'app-servers',
@@ -10,9 +11,10 @@ export class ServersComponent implements OnInit {
   server: number;
   allowNewServer = false;
   serverStatus: string;
-  serverName: string;
+   serverName: string;
   ifTest: boolean;
   servers = [];
+  name=new EventEmitter<{srvName:string;}>();
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
@@ -32,6 +34,12 @@ export class ServersComponent implements OnInit {
   updateServerName(event: any) {
     this.serverName = event.target.value;
 
+  }
+  onNameChange(name)
+  {
+    this.serverName=name.srvName
+    console.log("in here");
+    console.log(name.srvName);
   }
 
 }

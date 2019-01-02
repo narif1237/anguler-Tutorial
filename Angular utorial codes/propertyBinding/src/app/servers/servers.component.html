@@ -8,7 +8,7 @@ Server name is {{serverName}}
     {{allowNewServer}}
     {{serverStatus}}
   </p>
-  <app-server *ngFor="let server of servers"></app-server>
+  <app-server *ngFor="let server of servers" [serverName]="serverName" (name)="onNameChange($event)"></app-server>
   <ng-template #el>
 <p>ifTest is false</p>
   </ng-template>
